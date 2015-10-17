@@ -41,12 +41,12 @@
       <!-- ng-model is used to bind to the stock.shares value  -->
       <td contenteditable type="number" ng-model="stock.shares"></td>
       <td>{{stock.lastPrice | currency}}</td>
-      <td>
-        <span ng-hide="showPercent" stk-sign-color="{{watchlist.dayChange}}">{{stock.change | currency}}</span>
-        <span ng-show="showPercent" stk-sign-color="{{watchlist.dayChange}}">{{stock.percentChange}}</span>
+      <td stk-sign-color="{{stock.change}}">
+        <span ng-hide="showPercent">{{stock.change | currency}}</span>
+        <span ng-show="showPercent">{{stock.percentChange}}</span>
       </td>
-      <td stk-sign-color="{{watchlist.dayChange}}">{{stock.marketValue | currency }}</td>
-      <td>{{stock.dayChange | currency}}
+      <td >{{stock.marketValue | currency }}</td>
+      <td stk-sign-color="{{stock.dayChange}}">{{stock.dayChange | currency}}
         <button type="button" class="close"
           ng-click="removeStock(stock)">&times;</button>
       </td>

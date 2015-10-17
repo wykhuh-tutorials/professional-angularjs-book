@@ -38,7 +38,8 @@
         stock="stock"
         is-last="$last">
       <td>{{stock.company.symbol}}</td>
-      <td>{{stock.shares}}</td>
+      <!-- ng-model is used to bind to the stock.shares value  -->
+      <td contenteditable type="number" ng-model="stock.shares"></td>
       <td>{{stock.lastPrice}}</td>
       <td>
         <span ng-hide="showPercent">{{stock.change}}</span>
@@ -52,3 +53,4 @@
     </tr>
   </tbody>
 </table>
+<div class="small text-center">Click on Shares Owned cell to edit.</div>

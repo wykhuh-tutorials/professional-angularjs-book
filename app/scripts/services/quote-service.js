@@ -63,5 +63,5 @@ angular.module('stockDogApp')
     };
 
     // [4] Used to fetch new quote data every  hour
-    $interval(this.fetch, 1000 * 10);
+    $interval(this.fetch, 1000 * 60 * 60);
   });

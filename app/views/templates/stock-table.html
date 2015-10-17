@@ -28,7 +28,7 @@
       <td></td>
       <td></td>
       <td>{{watchlist.marketValue}}</td>
-      <td>{{watchlist.dayChange}}</td>
+      <td stk-sign-color="{{watchlist.dayChange}}">{{watchlist.dayChange}}</td>
     </tr>
   </tfoot>
   <tbody>
@@ -42,10 +42,10 @@
       <td contenteditable type="number" ng-model="stock.shares"></td>
       <td>{{stock.lastPrice}}</td>
       <td>
-        <span ng-hide="showPercent">{{stock.change}}</span>
-        <span ng-show="showPercent">{{stock.percentChange}}</span>
+        <span ng-hide="showPercent" stk-sign-color="{{watchlist.dayChange}}">{{stock.change}}</span>
+        <span ng-show="showPercent" stk-sign-color="{{watchlist.dayChange}}">{{stock.percentChange}}</span>
       </td>
-      <td>{{stock.marketValue}}</td>
+      <td stk-sign-color="{{watchlist.dayChange}}">{{stock.marketValue}}</td>
       <td>{{stock.dayChange}}
         <button type="button" class="close"
           ng-click="removeStock(stock)">&times;</button>

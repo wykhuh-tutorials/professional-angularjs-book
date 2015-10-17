@@ -27,8 +27,8 @@
       <td>{{watchlist.shares}}</td>
       <td></td>
       <td></td>
-      <td>{{watchlist.marketValue}}</td>
-      <td stk-sign-color="{{watchlist.dayChange}}">{{watchlist.dayChange}}</td>
+      <td>{{watchlist.marketValue | currency}}</td>
+      <td stk-sign-color="{{watchlist.dayChange }}">{{watchlist.dayChange | currency}}</td>
     </tr>
   </tfoot>
   <tbody>
@@ -40,13 +40,13 @@
       <td>{{stock.company.symbol}}</td>
       <!-- ng-model is used to bind to the stock.shares value  -->
       <td contenteditable type="number" ng-model="stock.shares"></td>
-      <td>{{stock.lastPrice}}</td>
+      <td>{{stock.lastPrice | currency}}</td>
       <td>
-        <span ng-hide="showPercent" stk-sign-color="{{watchlist.dayChange}}">{{stock.change}}</span>
+        <span ng-hide="showPercent" stk-sign-color="{{watchlist.dayChange}}">{{stock.change | currency}}</span>
         <span ng-show="showPercent" stk-sign-color="{{watchlist.dayChange}}">{{stock.percentChange}}</span>
       </td>
-      <td stk-sign-color="{{watchlist.dayChange}}">{{stock.marketValue}}</td>
-      <td>{{stock.dayChange}}
+      <td stk-sign-color="{{watchlist.dayChange}}">{{stock.marketValue | currency }}</td>
+      <td>{{stock.dayChange | currency}}
         <button type="button" class="close"
           ng-click="removeStock(stock)">&times;</button>
       </td>
